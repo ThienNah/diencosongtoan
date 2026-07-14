@@ -1,0 +1,84 @@
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    margin-top: 80px; 
+}
+h2 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-align: right;
+    margin-top: 0px;
+}
+li {
+    color: white;
+    font-size: 28px;
+}
+p {
+    text-align: center;
+    color: white;
+    font-size: 32px;
+}
+img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 20px;
+    max-width:400px;
+    height: auto;
+}
+body {
+    background: linear-gradient(300deg, #aba3d9, #fa7f7f, #5151f0); 
+    padding: 20px;
+    position: relative;
+}
+#searchInput {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 20px;     
+    font-size: 18px;        
+    border: 2px solid #fff; 
+    border-radius: 25px;    
+    outline: none;          
+    background-color: #ffffff; 
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+    
+    position: absolute;       
+    top: 60px;             
+    right: 20px;           
+    z-index: 9999;         
+    box-shadow: 0 4px 6px #0000001a, 0 10px 20px #0000001a;
+}
+
+#searchInput:focus {
+    border-color: #000000;  
+    box-shadow: 4px 8px #0000002b;
+}
+#itemList {
+    max-width: 280px;
+    width: 280px;
+    padding: 0;
+    list-style: none;
+    position: absolute;       
+    top: 115px;             
+    right: 20px;           
+    z-index: 9998;         
+}
+.item {
+    color: white;
+    font-size: 20px;
+    padding: 12px 20px;
+    background: #000000d9; 
+    margin-bottom: 8px; 
+    border-radius: 12px; 
+    text-align: left;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px #000000cc;
+    border: 1px solid #2b2b2b; 
+}
+.item:hover {
+    background: #000000; 
+    transform: translateY(-2px); 
+    box-shadow: 6px 15px #2424242b;
+    cursor: pointer;
+}
