@@ -2,14 +2,7 @@ h1 {
     text-align: center;
     color: white;
     font-size: 40px;
-    margin-top: 80px; 
-}
-h2 {
-    color: white;
-    font-size: 30px;
-    margin-bottom: 10px;
-    text-align: right;
-    margin-top: 0px;
+    margin-top: 80px;
 }
 li {
     color: white;
@@ -20,6 +13,20 @@ p {
     color: white;
     font-size: 32px;
 }
+.contact-box {
+    background-color: #00000033;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 600px;
+}
+.contact-box p {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 10px 0;
+    text-align: center;
+}
 img {
     display: block;
     margin: 20px auto;
@@ -28,30 +35,28 @@ img {
     height: auto;
 }
 body {
-    background: linear-gradient(300deg, #aba3d9, #fa7f7f, #5151f0); 
+    background: linear-gradient(300deg, #aba3d9, #fa7f7f, #5151f0);
     padding: 20px;
     position: relative;
 }
 #searchInput {
     width: 100%;
     max-width: 280px;
-    padding: 12px 20px;     
-    font-size: 18px;        
-    border: 2px solid #fff; 
-    border-radius: 25px;    
-    outline: none;          
-    background-color: #ffffff; 
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
-    
-    position: absolute;       
-    top: 60px;             
-    right: 20px;           
-    z-index: 9999;         
+    padding: 12px 20px;
+    font-size: 18px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    outline: none;
+    background-color: #ffffff;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    z-index: 9999;
     box-shadow: 0 4px 6px #0000001a, 0 10px 20px #0000001a;
 }
-
 #searchInput:focus {
-    border-color: #000000;  
+    border-color: #000000;
     box-shadow: 4px 8px #0000002b;
 }
 #itemList {
@@ -59,26 +64,107 @@ body {
     width: 280px;
     padding: 0;
     list-style: none;
-    position: absolute;       
-    top: 115px;             
-    right: 20px;           
-    z-index: 9998;         
+    position: absolute;
+    top: 115px;
+    right: 20px;
+    z-index: 9998;
 }
 .item {
     color: white;
     font-size: 20px;
     padding: 12px 20px;
-    background: #000000d9; 
-    margin-bottom: 8px; 
-    border-radius: 12px; 
+    background: #000000d9;
+    margin-bottom: 8px;
+    border-radius: 12px;
     text-align: left;
     transition: all 0.2s ease;
     box-shadow: 0 4px 10px #000000cc;
-    border: 1px solid #2b2b2b; 
+    border: 1px solid #2b2b2b;
 }
 .item:hover {
-    background: #000000; 
-    transform: translateY(-2px); 
+    background: #000000;
+    transform: translateY(-2px);
     box-shadow: 6px 15px #2424242b;
     cursor: pointer;
+}
+.shop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #00000033;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1000;
+}
+.menu-san-pham-container {
+    position: relative;
+}
+.btn-san-pham {
+    background: white;
+    color: #000000;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px #ffffff66;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+}
+.btn-san-pham:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px #30303099;
+}
+.btn-san-pham:active {
+    transform: translateY(1px);
+}
+#searchInput {
+    position: static;
+    width: 250px;
+    margin: 0;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    outline: none;
+    background-color: #ffffff;
+    transition: all 0.5s;
+}
+.dropdown-list {
+    display: none;
+    position: absolute;
+    top: 140%;
+    left: 0;
+    background-color: #ffffff;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px #00000033;
+    z-index: 999;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    transform: translateY(-10px);
+}
+.dropdown-list.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+.dropdown-item:hover {
+    background-color: #f5f5f5;
 }
