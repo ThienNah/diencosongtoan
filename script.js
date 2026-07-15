@@ -32,3 +32,17 @@ document.addEventListener('click', function(event) {
         itemList.style.display = 'none';
     }
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const nutSanPham = document.getElementById('nutSanPham');
+    const listSanPham = document.getElementById('listSanPham');
+    if (!nutSanPham || !listSanPham) return;
+    nutSanPham.addEventListener('click', function(event) {
+        event.stopPropagation();
+        listSanPham.classList.toggle('show');
+    });
+    document.addEventListener('click', function(event) {
+        if (!nutSanPham.contains(event.target) && !listSanPham.contains(event.target)) {
+            listSanPham.classList.remove('show');
+        }
+    });
+});
