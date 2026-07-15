@@ -1,62 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Điện cơ Song toàn</title>
-    </head>
-    <body>
-        <div class="shop-header">
-            <div class="menu-san-pham-container">
-                <button id="nutSanPham" class="btn-san-pham">
-                    Sản phẩm ▾
-                </button>
-                <div id="listSanPham" class="dropdown-list">
-                    <a href="ac-quy.html" class="dropdown-item">Bình ắc quy</a>
-                    <a href="dich-vu-sua-chua.html" class="dropdown-item">Dịch vụ sửa chữa mọi thứ bạn muốn</a>
-                    <a href="dynamo-12v.html" class="dropdown-item">Dynamo/Đi na mô 12V</a>
-                    <a href="dynamo-24v.html" class="dropdown-item">Dynamo/Đi na mô 24V</a>
-                    <a href="den-led.html" class="dropdown-item">Đèn pha led siêu sáng</a>
-                    <a href="de-ma-ro-12v.html" class="dropdown-item">Đề ma rơ 12V</a>
-                    <a href="de-ma-ro-24v.html" class="dropdown-item">Đề ma rơ 24V</a>
-                    <a href="avr.html" class="dropdown-item">Linh kiện AVR</a>
-                    <a href="may-phat-dien.html" class="dropdown-item">Máy phát điện</a>
-                    <a href="mo-to.html" class="dropdown-item">Mô tơ</a>
-                </div>
+<html lang="vi">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Song Toan - Smart Search Component</title>
+</head>
+<body>
+
+    <div class="shop-header">
+        <div class="menu-san-pham-container">
+            <button id="nutSanPham" class="btn-san-pham"> Danh mục ▾ </button>
+            <div id="listSanPham" class="dropdown-list">
+                <a href="ac-quy.html" class="dropdown-item">Mẫu thử nghiệm 01: Bình ắc quy</a>
+                <a href="dich-vu-sua-chua.html" class="dropdown-item">Mẫu thử nghiệm 02: Hệ thống điều khiển nâng cao</a>
+                <a href="dynamo-12v.html" class="dropdown-item">Mẫu thử nghiệm 03: Động cơ xoay chiều Dynamo 12V</a>
+                <a href="dynamo-24v.html" class="dropdown-item">Mẫu thử nghiệm 04: Động cơ xoay chiều Dynamo 24V</a>
+                <a href="den-led.html" class="dropdown-item">Mẫu thử nghiệm 05: Thiết bị module LED công suất</a>
+                <a href="de-ma-ro-12v.html" class="dropdown-item">Mẫu thử nghiệm 06: Linh kiện khởi động 12V</a>
+                <a href="de-ma-ro-24v.html" class="dropdown-item">Mẫu thử nghiệm 07: Linh kiện khởi động 24V</a>
+                <a href="avr.html" class="dropdown-item">Mẫu thử nghiệm 08: Bộ điều chỉnh điện áp AVR</a>
+                <a href="may-phat-dien.html" class="dropdown-item">Mẫu thử nghiệm 09: Module máy phát năng lượng</a>
+                <a href="mo-to.html" class="dropdown-item">Mẫu thử nghiệm 10: Động cơ cảm ứng Mô tơ</a>
             </div>
-            <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
         </div>
-        <ul id="itemList" style="display: none;">
-            <li class="item">Bình ắc quy</li>
-            <li class="item">Dịch vụ sửa chữa mọi thứ bạn muốn</li>
-            <li class="item">Dynamo/Đi na mô 12V</li>
-            <li class="item">Dynamo/Đi na mô 24V</li>
-            <li class="item">Đèn pha led siêu sáng</li>
-            <li class="item">Đề ma rơ 12V</li>
-            <li class="item">Đề ma rơ 24V</li>
-            <li class="item">Linh kiện AVR</li>
-            <li class="item">Máy phát điện</li>
-            <li class="item">Mô tơ</li>
-        </ul>
-        <h1>Chào mừng bạn đến với Điện cơ Song toàn</h1>
-        <p>Chúng tôi cung cấp các dịch vụ sửa chữa, trao đổi các sản phẩm điện cơ chất lượng cao</p>
-        <p>Chúng tôi cam kết đặt uy tín lên hàng đầu và có tem bảo hành chính hãng</p>
-        <p>Các sản phẩm nổi bật bên tôi</p>
-        <img src="den pha led.jpg" alt="Hình ảnh đèn pha led công suất siêu sáng">
-        <p>Đèn pha led công suất siêu sáng với hiệu suất cao, hiệu năng vượt trội</p>
-        <img src="dynamo.jpg" alt="Hình ảnh dynamo">
-        <p>Dynamo chất lượng cao, đáp ứng mọi nhu cầu và bền bỉ với thời gian</p>
-        <img src="mo to.jpg" alt="Hình ảnh mô tơ">
-        <p>Mô tơ chất lượng cao, hiệu suất và hiệu năng tốt và độ bền cao</p>
-        <img src="nhung vi khach vui ve.jpg" alt="Hình ảnh những vị khách vui vẻ ra về sau khi sử dụng dịch vụ của chúng tôi">
-        <p>Những vị khách vui vẻ ra về sau khi sử dụng dịch vụ của chúng tôi</p>
-        <p>Hãy liên hệ với chúng tôi để biết thêm chi tiết.</p>
-        <div class="contact-box">
-            <p>Địa chỉ: Cầu cảng số 3, cảng cá Thọ Quang, Phường Sơn Trà, Thành phố Đà Nẵng</p>
-            <p>SĐT: 0392 888 997</p>
-            <p>Email: toandn0913@gmail.com</p>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Thử nghiệm tìm kiếm không dấu...">
+            <div id="itemList" class="search-dropdown" style="display: none;">
+                <a href="ac-quy.html" class="search-item">Mẫu thử nghiệm 01: Bình ắc quy</a>
+                <a href="dich-vu-sua-chua.html" class="search-item">Mẫu thử nghiệm 02: Hệ thống điều khiển nâng cao</a>
+                <a href="dynamo-12v.html" class="search-item">Mẫu thử nghiệm 03: Động cơ xoay chiều Dynamo 12V</a>
+                <a href="dynamo-24v.html" class="search-item">Mẫu thử nghiệm 04: Động cơ xoay chiều Dynamo 24V</a>
+                <a href="den-led.html" class="search-item">Mẫu thử nghiệm 05: Thiết bị module LED công suất</a>
+                <a href="de-ma-ro-12v.html" class="search-item">Mẫu thử nghiệm 06: Linh kiện khởi động 12V</a>
+                <a href="de-ma-ro-24v.html" class="search-item">Mẫu thử nghiệm 07: Linh kiện khởi động 24V</a>
+                <a href="avr.html" class="search-item">Mẫu thử nghiệm 08: Bộ điều chỉnh điện áp AVR</a>
+                <a href="may-phat-dien.html" class="search-item">Mẫu thử nghiệm 09: Module máy phát năng lượng</a>
+                <a href="mo-to.html" class="search-item">Mẫu thử nghiệm 10: Động cơ cảm ứng Mô tơ</a>
+            </div>
         </div>
-        <script src="script.js"></script>
-    </body>
+    </div>
+
+    <h1>Dự án Học tập: Component Lọc Tìm kiếm Sản phẩm</h1>
+    <p>Đây là một trang web mã nguồn mở thử nghiệm thuật toán tối ưu hóa tìm kiếm thời gian thực (Real-time Filter Engine).</p>
+    <p>Hệ thống tự động chuyển đổi, chuẩn hóa chuỗi dữ liệu đầu vào và loại bỏ hoàn toàn các ký tự có dấu tiếng Việt.</p>
+    <p>Bộ lọc giúp tăng tốc độ truy vấn trên giao diện Client-side bằng Vanilla JavaScript nguyên bản không phụ thuộc framework.</p>
+
+    <div class="contact-box">
+        <p>Hộp thông tin Sandbox kiểm thử môi trường phát triển ứng dụng (Development Environment)</p>
+        <p>Mã định danh Tester: ThienNah Project Office</p>
+        <p>Hỗ trợ kỹ thuật: open-source-dev@songtoan.internal</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
