@@ -1,40 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThienNah - Software Developer Portfolio</title>
-</head>
-<body>
-    <div class="shop-header">
-        <div class="menu-san-pham-container">
-            <button id="nutSanPham" class="btn-san-pham">Projects ▾ </button>
-            <div id="listSanPham" class="dropdown-list">
-                <a href="#" class="dropdown-item">Live Search Component</a>
-                <a href="#" class="dropdown-item">Dropdown Menu Project</a>
-                <a href="#" class="dropdown-item">Vanilla JS Algorithms</a>
+<html lang="vi">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Điện cơ Song toàn</title>
+    </head>
+    <body>
+        <div class="shop-header">
+            <div class="menu-san-pham-container">
+                <button id="nutSanPham" class="btn-san-pham">Sản phẩm</button>
+                <div id="listSanPham" class="dropdown-list">
+                    <a href="ac-quy.html" class="dropdown-item">Bình ắc quy</a>
+                    <a href="dich-vu-sua-chua.html" class="dropdown-item">Dịch vụ sửa chữa mọi thứ bạn muốn</a>
+                    <a href="dynamo-12v.html" class="dropdown-item">Dynamo/Đi na mô 12V</a>
+                    <a href="dynamo-24v.html" class="dropdown-item">Dynamo/Đi na mô 24V</a>
+                    <a href="den-led.html" class="dropdown-item">Đèn pha led siêu sáng</a>
+                    <a href="de-ma-ro-12v.html" class="dropdown-item">Đề ma rơ 12V</a>
+                    <a href="de-ma-ro-24v.html" class="dropdown-item">Đề ma rơ 24V</a>
+                    <a href="avr.html" class="dropdown-item">Linh kiện AVR</a>
+                    <a href="may-phat-dien.html" class="dropdown-item">Máy phát điện</a>
+                    <a href="mo-to.html" class="dropdown-item">Mô tơ</a>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                <div id="itemList" class="search-dropdown" style="display: none;">
+                    <a href="san-pham.html?id=ac-quy" class="dropdown-item">Bình ắc quy</a>
+                    <a href="san-pham.html?id=dich-vu-sua-chua" class="dropdown-item">Dịch vụ sửa chữa mọi thứ bạn muốn</a>
+                    <a href="san-pham.html?id=dynamo-12v" class="dropdown-item">Dynamo/Đi na mô 12V</a>
+                    <a href="san-pham.html?id=dynamo-24v" class="dropdown-item">Dynamo/Đi na mô 24V</a>
+                    <a href="san-pham.html?id=den-led" class="dropdown-item">Đèn pha led siêu sáng</a>
+                    <a href="san-pham.html?id=de-ma-ro-12v" class="dropdown-item">Đề ma rơ 12V</a>
+                    <a href="san-pham.html?id=de-ma-ro-24v" class="dropdown-item">Đề ma rơ 24V</a>
+                    <a href="san-pham.html?id=avr" class="dropdown-item">Linh kiện AVR</a>
+                    <a href="san-pham.html?id=may-phat-dien" class="dropdown-item">Máy phát điện</a>
+                    <a href="san-pham.html?id=mo-to" class="dropdown-item">Mô tơ</a>
+                </div>
             </div>
         </div>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search projects...">
-            <div id="itemList" class="search-dropdown" style="display: none;">
-                <a href="#" class="search-item">Live Search Component</a>
-                <a href="#" class="search-item">Dropdown Menu Project</a>
-                <a href="#" class="search-item">Vanilla JS Algorithms</a>
-            </div>
+        <h1>Chào mừng bạn đến với Điện cơ Song toàn</h1>
+        <p>Chúng tôi cung cấp các dịch vụ sửa chữa, trao đổi các sản phẩm điện cơ chất lượng cao</p>
+        <p>Chúng tôi cam kết đặt uy tín lên hàng đầu và có tem bảo hành chính hãng</p>
+        <p>Các sản phẩm nổi bật bên tôi</p>
+        <img src="den pha led.jpg" alt="Hình ảnh đèn pha led công suất siêu sáng">
+        <p>Đèn pha led công suất siêu sáng với hiệu suất cao, hiệu năng vượt trội</p>
+        <img src="dynamo.jpg" alt="Hình ảnh dynamo">
+        <p>Dynamo chất lượng cao, đáp ứng mọi nhu cầu và bền bỉ với thời gian</p>
+        <img src="mo to.jpg" alt="Hình ảnh mô tơ">
+        <p>Mô tơ chất lượng cao, hiệu suất và hiệu năng tốt và độ bền cao</p>
+        <img src="nhung vi khach vui ve.jpg" alt="Hình ảnh những vị khách vui vẻ ra về sau khi sử dụng dịch vụ của chúng tôi">
+        <p>Những vị khách vui vẻ ra về sau khi sử dụng dịch vụ của chúng tôi</p>
+        <p>Hãy liên hệ với chúng tôi để biết thêm chi tiết.</p>
+        <div class="contact-box">
+            <p>Địa chỉ: Cầu cảng số 3, cảng cá Thọ Quang, Phường Sơn Trà, Thành phố Đà Nẵng</p>
+            <p>SĐT: 0392 888 997</p>
+            <p>Email: toandn0913@gmail.com</p>
         </div>
-    </div>
-
-    <h1>Welcome to ThienNah's Developer Portfolio</h1>
-    <p>I am a software developer specializing in building lightweight, open-source web components using Pure JavaScript.</p>
-    <p>This repository showcases my custom real-time search engine filtering system without using heavy frameworks.</p>
-
-    <div class="contact-box">
-        <p>GitHub Profile: ://github.com</p>
-        <p>Email: open-source-dev@songtoan.internal</p>
-    </div>
-
-    <script src="script.js"></script>
-</body>
+    </body>
 </html>
