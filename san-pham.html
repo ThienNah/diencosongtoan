@@ -1,67 +1,86 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">Điện cơ Song toàn</title>
-</head>
-<body>
-    <div class="shop-header">
-        <div class="menu-san-pham-container">
-            <button id="nutSanPham" class="btn-san-pham">Sản phẩm</button>
-            <div id="listSanPham" class="dropdown-list">
-                <a href="san-pham.html?id=ac-quy" class="dropdown-item">Bình ắc quy</a>
-                <a href="san-pham.html?id=dich-vu-sua-chua" class="dropdown-item">Dịch vụ sửa chữa mọi thứ bạn muốn</a>
-                <a href="san-pham.html?id=dynamo-12v" class="dropdown-item">Dynamo/Đi na mô 12V</a>
-                <a href="san-pham.html?id=dynamo-24v" class="dropdown-item">Dynamo/Đi na mô 24V</a>
-                <a href="san-pham.html?id=den-led" class="dropdown-item">Đèn pha led siêu sáng</a>
-                <a href="san-pham.html?id=de-ma-ro-12v" class="dropdown-item">Đề ma rơ 12V</a>
-                <a href="san-pham.html?id=de-ma-ro-24v" class="dropdown-item">Đề ma rơ 24V</a>
-                <a href="san-pham.html?id=avr" class="dropdown-item">Linh kiện AVR</a>
-                <a href="san-pham.html?id=may-phat-dien" class="dropdown-item">Máy phát điện</a>
-                <a href="san-pham.html?id=mo-to" class="dropdown-item">Mô tơ</a>
-            </div>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="pageTitle">Điện cơ Song toàn</title>
+    </head>
+    <body>
+        <div class="shop-header"> 
+            <div class="menu-san-pham-container"> 
+                <button id="nutSanPham" class="btn-san-pham">Sản phẩm</button> 
+                <div id="listSanPham" class="dropdown-list"> 
+                    <a href="san-pham.html?id=ac-quy" class="dropdown-item">Bình ắc quy</a> 
+                    <a href="san-pham.html?id=dich-vu-su-chua" class="dropdown-item">Dịch vụ sửa chữa mọi thứ bạn muốn</a> 
+                    <a href="san-pham.html?id=dynamo-12v" class="dropdown-item">Dynamo/Đi na mô 12V</a> 
+                    <a href="san-pham.html?id=dynamo-24v" class="dropdown-item">Dynamo/Đi na mô 24V</a> 
+                    <a href="san-pham.html?id=den-led" class="dropdown-item">Đèn pha led siêu sáng</a> 
+                    <a href="san-pham.html?id=de-ma-ro-12v" class="dropdown-item">Đề ma rơ 12V</a> 
+                    <a href="san-pham.html?id=de-ma-ro-24v" class="dropdown-item">Đề ma rơ 24V</a> 
+                    <a href="san-pham.html?id=avr" class="dropdown-item">Linh kiện AVR</a> 
+                    <a href="san-pham.html?id=may-phat-dien" class="dropdown-item">Máy phát điện</a> 
+                    <a href="san-pham.html?id=mo-to" class="dropdown-item">Mô tơ</a> 
+                </div> 
+            </div> 
+            <div class="search-container"> 
+                <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..."> 
+                <div id="itemList" class="search-dropdown" style="display: none;"> 
+                    <a href="san-pham.html?id=ac-quy" class="search-item">Bình ắc quy</a> 
+                    <a href="san-pham.html?id=dich-vu-su-chua" class="search-item">Dịch vụ sửa chữa mọi thứ bạn muốn</a> 
+                    <a href="san-pham.html?id=dynamo-12v" class="search-item">Dynamo/Đi na mô 12V</a> 
+                    <a href="san-pham.html?id=dynamo-24v" class="search-item">Dynamo/Đi na mô 24V</a> 
+                    <a href="san-pham.html?id=den-led" class="search-item">Đèn pha led siêu sáng</a> 
+                    <a href="san-pham.html?id=de-ma-ro-12v" class="search-item">Đề ma rơ 12V</a> 
+                    <a href="san-pham.html?id=de-ma-ro-24v" class="search-item">Đề ma rơ 24V</a> 
+                    <a href="san-pham.html?id=avr" class="search-item">Linh kiện AVR</a> 
+                    <a href="san-pham.html?id=may-phat-dien" class="search-item">Máy phát điện</a> 
+                    <a href="san-pham.html?id=mo-to" class="search-item">Mô tơ</a> 
+                </div> 
+            </div> 
         </div>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
-            <div id="itemList" class="search-dropdown">
-                <a href="san-pham.html?id=ac-quy" class="search-item">Bình ắc quy</a>
-                <a href="san-pham.html?id=dich-vu-sua-chua" class="search-item">Dịch vụ sửa chữa mọi thứ bạn muốn</a>
-                <a href="san-pham.html?id=dynamo-12v" class="search-item">Dynamo/Đi na mô 12V</a>
-                <a href="san-pham.html?id=dynamo-24v" class="search-item">Dynamo/Đi na mô 24V</a>
-                <a href="san-pham.html?id=den-led" class="search-item">Đèn pha led siêu sáng</a>
-                <a href="san-pham.html?id=de-ma-ro-12v" class="search-item">Đề ma rơ 12V</a>
-                <a href="san-pham.html?id=de-ma-ro-24v" class="search-item">Đề ma rơ 24V</a>
-                <a href="san-pham.html?id=avr" class="search-item">Linh kiện AVR</a>
-                <a href="san-pham.html?id=may-phat-dien" class="search-item">Máy phát điện</a>
-                <a href="san-pham.html?id=mo-to" class="search-item">Mô tơ</a>
-            </div>
+            <div class="btn-back-box"> 
+                <a href="index.html" class="btn-back">← Quay lại trang chủ</a> 
+            </div> 
+            <h1 id="productTitle">Sản phẩm điện cơ</h1> 
+            <img id="productImg" src="" alt="Hình ảnh sản phẩm"> 
+            <div class="detail-box" id="productDescBox"> 
+                <h2>Thông tin chi tiết</h2> 
+            <div id="productText"></div> 
+        </div> 
+        <div class="detail-box" id="boxMuaHang" style="display: none;"> 
+            <h2>Đặt mua sản phẩm này</h2> 
+            <form id="formMuaHang"> 
+            <input type="text" id="txtTenMua" placeholder="Tên của bạn hoặc tên Ghe / Tàu" required class="booking-input"> 
+            <input type="tel" id="txtSdtMua" placeholder="Số điện thoại liên hệ" required class="booking-input"> 
+            <button type="submit" class="btn-submit">Đặt hàng ngay</button> 
+            </form> 
+        </div> 
+        <div class="detail-box" id="boxSuaChua" style="display: none;"> 
+            <h2>Đăng ký dịch vụ sửa chữa cấp tốc</h2> 
+            <form id="formSuaChua"> 
+            <input type="text" id="txtTenSua" placeholder="Tên của bạn hoặc tên Ghe / Tàu" required class="booking-input"> 
+            <input type="tel" id="txtSdtSua" placeholder="Số điện thoại liên hệ" required class="booking-input"> 
+            <input type="text" id="txtSuaGi" placeholder="Điền sửa chữa cái gì?" required class="booking-input"> 
+            <input type="text" id="txtKhiNaoLay" placeholder="Khi nào sẽ lấy máy?" required class="booking-input"> 
+            <textarea id="txtLyDo" placeholder="Lý do sửa / Tình trạng hư hỏng là gì?" required class="booking-input text-area"></textarea> 
+            <button type="submit" class="btn-submit">Gửi yêu cầu sửa chữa</button> 
+            </form> 
+        </div> 
+        <div class="detail-box" id="boxAdmin" style="display: none;"> 
+            <div id="adminTableContent"></div> 
+        </div> 
+        <div class="detail-box" id="chinhSachBox"> 
+            <h2>Chính sách ưu đãi</h2> 
+            <p>✓ Có tem bảo hành chính hãng từ Điện cơ Song toàn.</p> 
+            <p>✓ Hỗ trợ kỹ thuật, quấn lại và sửa chữa cấp tốc tại cửa hàng.</p> 
+            <p>✓ Đổi trả uy tín nếu phát hiện lỗi từ nhà sản xuất.</p> 
         </div>
-    <div class="btn-back-box">
-        <a href="index.html" class="btn-back">← Quay lại trang chủ</a>
-    </div>
-
-    <h1 id="productTitle">Sản phẩm điện cơ</h1>
-    <img id="productImg" src="" alt="Hình ảnh sản phẩm">
-
-    <div class="detail-box">
-        <h2>Thông tin chi tiết</h2>
-        <div id="productInfo"></div>
-    </div>
-
-    <div class="detail-box">
-        <h2>Chính sách ưu đãi</h2>
-        <p>✓ Có tem bảo hành chính hãng từ Điện cơ Song toàn.</p>
-        <p>✓ Hỗ trợ kỹ thuật, quấn lại và sửa chữa cấp tốc tại cửa hàng.</p>
-        <p>✓ Đổi trả uy tín nếu phát hiện lỗi từ nhà sản xuất.</p>
-    </div>
-
-    <div class="contact-box">
-        <p>Địa chỉ: Cầu cảng số 3, cảng cá Thọ Quang, Phường Sơn Trà, Thành phố Đà Nẵng</p>
-        <p>SĐT: 0392 888 997</p>
-        <p>Email: toandn0913@gmail.com</p>
-    </div>
-</body>
+        <div class="contact-box"> 
+            <p>Địa chỉ: Cầu cảng số 3, cảng cá Thọ Quang, Phường Sơn Trà, Thành phố Đà Nẵng</p> 
+            <p>SĐT: 0392 888 997</p> 
+            <p>Email: toandn0913@gmail.com</p> 
+        </div> 
+    </body> 
 </html>
