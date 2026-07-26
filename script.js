@@ -1,122 +1,214 @@
-function removeVietnameseTones(str) {
-    return str
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/đ/g, "d")
-        .replace(/Đ/g, "d")
-        .toLowerCase();
-}
-document.addEventListener("DOMContentLoaded", function() {
-    const searchInput = document.getElementById('searchInput');
-    const itemList = document.getElementById('itemList');
-    const nutSanPham = document.getElementById('nutSanPham');
-    const listSanPham = document.getElementById('listSanPham');
-    function filterProducts() {
-        if (!searchInput || !itemList) return;
-        const filter = removeVietnameseTones(searchInput.value.trim());
-        if (filter === '') {
-            itemList.style.display = 'none';
-            return;
-        }
-        const items = document.querySelectorAll('.search-item');
-        let hasResult = false;
-        
-        items.forEach(function(item) {
-            const text = removeVietnameseTones(item.textContent);
-            if (text.includes(filter)) {
-                item.style.display = 'block';
-                hasResult = true;
-            } else {
-                item.style.display = 'none';
-            }
-        });
-        itemList.style.display = hasResult ? 'block' : 'none';
+function removeVietnameseTones(str) { 
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/Đ/g, "d").toLowerCase(); 
+} 
+document.addEventListener("DOMContentLoaded", function() { 
+  const searchInput = document.getElementById('searchInput'); 
+  const itemList = document.getElementById('itemList'); 
+  const nutSanPham = document.getElementById('nutSanPham'); 
+  const listSanPham = document.getElementById('listSanPham'); 
+  function renderProductData() { 
+    const urlParams = new URLSearchParams(window.location.search); 
+    const productId = urlParams.get('id'); 
+    const isAdmin = urlParams.get('admin'); 
+    if (!productId) return; 
+    const dataBuffer = { 
+      "ac-quy": { title: "Bình ắc quy chính hãng", img: "ac-quy.jpg", info: "<p>Bình ắc quy dung lượng cao.</p>" }, 
+      "dich-vu-su-chua": { title: "Dịch vụ sửa chữa mọi thứ bạn muốn", img: "nhung vi khach vui ve.jpg", info: "<p>Trạm sửa chữa cấp tốc.</p>" }, 
+      "dynamo-12v": { title: "Dynamo / Đi na mô 12V", img: "dynamo.jpg", info: "<p>Dynamo 12V sạc bình ổn định.</p>" }, 
+      "dynamo-24v": { title: "Dynamo / Đi na mô 24V", img: "dynamo.jpg", info: "<p>Dynamo 24V hiệu suất cao.</p>" }, 
+      "den-led": { title: "Đèn pha LED siêu sáng", img: "den pha led.jpg", info: "<p>Đèn pha LED chống nước IP68.</p>" }, 
+      "de-ma-ro-12v": { title: "Đề ma rơ 12V", img: "de-ma-ro.jpg", info: "<p>Củ đề 12V khởi động mượt mà.</p>" }, 
+      "de-ma-ro-24v": { title: "Đề ma rơ 24V", img: "de-ma-ro.jpg", info: "<p>Đề ma rơ 24V máy tàu thủy.</p>" }, 
+      "avr": { title: "Linh kiện mạch AVR", img: "avr.jpg", info: "<p>Mạch ổn định điện áp AVR.</p>" }, 
+      "may-phat-dien": { title: "Máy phát điện", img: "may-phat-dien.jpg", info: "<p>Trao đổi máy phát điện đa dạng.</p>" }, 
+      "mo-to": { title: "Mô tơ Điện cơ", img: "mo to.jpg", info: "<p>Mô tơ lõi đồng dày 100%.</p>" } 
+    }; 
+    const product = dataBuffer[productId]; 
+    if (!product) return; 
+    const pageTitleEl = document.getElementById('pageTitle'); 
+    const productTitleEl = document.getElementById('productTitle'); 
+    const productImgEl = document.getElementById('productImg'); 
+    const productTextEl = document.getElementById('productText'); 
+    const productDescBox = document.getElementById('productDescBox'); 
+    const boxMuaHang = document.getElementById('boxMuaHang'); 
+    const boxSuaChua = document.getElementById('boxSuaChua'); 
+    const boxAdmin = document.getElementById('boxAdmin'); 
+    const chinhSachBox = document.getElementById('chinhSachBox');
+    const contactBox = document.querySelector('.contact-box');
+    if (pageTitleEl) pageTitleEl.textContent = product.title + " - Điện cơ Song toàn"; 
+    if (productTitleEl) { 
+      productTitleEl.textContent = (isAdmin === "true" && productId === "dich-vu-su-chua") ? "Sổ Lịch Đặt Hàng & Sửa Chữa" : product.title; 
+    } 
+    if (productImgEl) {
+      if (isAdmin === "true" || productId === "dich-vu-su-chua") {
+        productImgEl.style.display = "none";
+        productImgEl.src = "";
+      } else {
+        productImgEl.style.display = "block";
+        productImgEl.src = product.img;
+      }
     }
-    if (searchInput) {
-        searchInput.addEventListener('input', filterProducts);
-        searchInput.addEventListener('focus', filterProducts);
+    if (productDescBox) { 
+      productDescBox.style.display = (isAdmin === "true" || productId === "dich-vu-su-chua") ? "none" : "block";
+    } 
+    if (productTextEl) productTextEl.innerHTML = product.info; 
+
+    if (boxMuaHang) boxMuaHang.style.display = "none"; 
+    if (boxSuaChua) boxSuaChua.style.display = "none"; 
+    if (boxAdmin) boxAdmin.style.display = "none"; 
+    if (isAdmin === "true" && productId === "dich-vu-su-chua") { 
+      if (boxAdmin) boxAdmin.style.display = "block";
+      const hBar = document.querySelector('.shop-header');
+      if (hBar) hBar.style.display = "none";
+      const bBack = document.querySelector('.btn-back-box');
+      if (bBack) bBack.style.display = "none";
+      if (chinhSachBox) chinhSachBox.style.display = "none";
+      if (chinhSachBox) chinhSachBox.style.display = "none";
+      if (contactBox) contactBox.style.display = "none";
+      renderAdminTable(); 
+    } else {
+      const hBar = document.querySelector('.shop-header');
+      if (hBar) hBar.style.display = "flex";
+      const bBack = document.querySelector('.btn-back-box');
+      if (bBack) bBack.style.display = "block";
+      if (chinhSachBox) chinhSachBox.style.display = "block";
+      if (contactBox) contactBox.style.display = "block";
+      if (productId === "dich-vu-su-chua") { 
+        if (boxSuaChua) boxSuaChua.style.display = "block"; 
+      } else { 
+        if (boxMuaHang) boxMuaHang.style.display = "block"; 
+      } 
     }
-    if (nutSanPham && listSanPham) {
-        nutSanPham.addEventListener('click', function(event) {
-            event.stopPropagation();
-            listSanPham.classList.toggle('show');
-        });
-    }
-    document.addEventListener('click', function(event) {
-        if (searchInput && itemList && !searchInput.contains(event.target) && !itemList.contains(event.target)) {
-            itemList.style.display = 'none';
-        }
-        if (nutSanPham && listSanPham && !nutSanPham.contains(event.target) && !listSanPham.contains(event.target)) {
-            listSanPham.classList.remove('show');
-        }
-    });
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
-    if (!productId) return;
-    const dataBuffer = {
-        "ac-quy": {
-            title: "Bình ắc quy chính hãng",
-            img: "ac-quy.jpg",
-            info: "<p>Bình ắc quy lưu trữ điện năng dung lượng cao, tuổi thọ bền bỉ.</p><p>Phù hợp cho tàu cá, xe máy, ô tô và các thiết bị tích điện dự phòng.</p>"
-        },
-        "dich-vu-sua-chua": {
-            title: "Dịch vụ sửa chữa mọi thứ bạn muốn",
-            img: "nhung vi khach vui ve.jpg",
-            info: "<p>Nhận quấn lại mô tơ, sửa chữa máy phát điện, dynamo, đề ma rơ cấp tốc.</p><p>Đội ngũ thợ tay nghề cao, kiểm tra bệnh máy chính xác, sửa nhanh lấy ngay tại cảng cá.</p>"
-        },
-        "dynamo-12v": {
-            title: "Dynamo / Đi na mô 12V",
-            img: "dynamo.jpg",
-            info: "<p>Dynamo 12V phát điện sạc bình công suất ổn định, hoạt động êm ái.</p><p>Thiết kế cơ khí chính xác, chống ăn mòn muối biển, phù hợp cho tàu thuyền.</p>"
-        },
-        "dynamo-24v": {
-            title: "Dynamo / Đi na mô 24V",
-            img: "dynamo.jpg",
-            info: "<p>Dynamo 24V hiệu suất cao dành cho các hệ thống máy lớn, xe tải, tàu cá.</p><p>Đảm bảo dòng điện sạc luôn mạnh mẽ và duy trì tuổi thọ cho hệ thống bình.</p>"
-        },
-        "den-led": {
-            title: "Đèn pha LED siêu sáng",
-            img: "den pha led.jpg",
-            info: "<p>Đèn pha LED công suất lớn, chống nước chuẩn IP67/IP68.</p><p>Góc chiếu rộng, siêu tiết kiệm điện, chuyên dụng đánh bắt cá hoặc chiếu sáng nhà xưởng.</p>"
-        },
-        "de-ma-ro-12v": {
-            title: "Đề ma rơ 12V",
-            img: "de-ma-ro.jpg",
-            info: "<p>Củ đề / Đề ma rơ 12V lực kéo mạnh, khởi động động cơ mượt mà.</p><p>Linh kiện chịu tải tốt, độ bền cao, ít hao bình.</p>"
-        },
-        "de-ma-ro-24v": {
-            title: "Đề ma rơ 24V",
-            img: "de-ma-ro.jpg",
-            info: "<p>Đề ma rơ 24V chuyên dụng cho động cơ diesel tải trọng lớn, máy tàu thủy.</p><p>Khởi động mạnh mẽ trong mọi điều kiện thời tiết khắc nghiệt.</p>"
-        },
-        "avr": {
-            title: "Linh kiện mạch AVR",
-            img: "avr.jpg",
-            info: "<p>Mạch điều tốc, tự động ổn định điện áp AVR cho máy phát điện.</p><p>Hàng chính hãng giúp bảo vệ các thiết bị điện không bị sốc áp.</p>"
-        },
-        "may-phat-dien": {
-            title: "Máy phát điện công nghiệp & gia đình",
-            img: "may-phat-dien.jpg",
-            info: "<p>Cung cấp và trao đổi máy phát điện đa dạng công suất từ gia đình đến tàu biển.</p><p>Động cơ chạy dầu/xăng tiết kiệm nhiên liệu, hoạt động bền bỉ liên tục.</p>"
-        },
-        "mo-to": {
-            title: "Mô tơ Điện cơ",
-            img: "mo to.jpg",
-            info: "<p>Mô tơ chất lượng cao, hiệu suất và hiệu năng tốt và độ bền cao.</p><p>Lõi đồng dày nguyên chất, chạy êm, ứng dụng rộng rãi trong sản xuất.</p>"
-        }
-    };
-    const product = dataBuffer[productId];
-    if (product) {
-        const pageTitleEl = document.getElementById('pageTitle');
-        const productTitleEl = document.getElementById('productTitle');
-        const productImgEl = document.getElementById('productImg');
-        const productInfoEl = document.getElementById('productInfo');
-        if (pageTitleEl) pageTitleEl.textContent = product.title + " - Điện cơ Song toàn";
-        if (productTitleEl) productTitleEl.textContent = product.title;
-        if (productImgEl) {
-            productImgEl.src = product.img;
-            productImgEl.alt = "Hình ảnh " + product.title;
-        }
-        if (productInfoEl) productInfoEl.innerHTML = product.info;
-    }
+  } 
+  function renderAdminTable() { 
+    const container = document.getElementById('adminTableContent'); 
+    if (!container) return; 
+
+    let danhSach = JSON.parse(localStorage.getItem('danhSachDatLich')) || []; 
+    if (danhSach.length === 0) { 
+      container.innerHTML = "<p style='text-align:center;'>Chưa có ca nào.</p>"; 
+      return; 
+    } 
+    let tableHtml = `<div style='overflow-x:auto;'> 
+      <table class='admin-table'> 
+        <tr> 
+          <th>Thời gian</th> 
+          <th>Sản phẩm</th> 
+          <th>Ghe / Tàu</th> 
+          <th>SĐT</th> 
+          <th>Chi tiết</th> 
+          <th>Thao tác</th> 
+        </tr>`; 
+    danhSach.forEach(function(item, index) { 
+      tableHtml += `<tr> 
+        <td>${item.time}</td> 
+        <td style='font-weight:bold;color:#fa7f7f;'>${item.loai}</td> 
+        <td>${item.ten}</td> 
+        <td><a href='tel:${item.sdt}'>📞 ${item.sdt}</a></td> 
+        <td>${item.chitiet}</td> 
+        <td><button class='btn-delete' data-index='${index}'>Xóa</button></td> 
+      </tr>`; 
+    }); 
+    tableHtml += `</table></div> <button id='btnXoaHet' class='btn-delete-all'>Xóa hết sổ</button>`; 
+    container.innerHTML = tableHtml; 
+    document.querySelectorAll('.btn-delete').forEach(function(btn) { 
+      btn.addEventListener('click', function() { 
+        let idx = this.getAttribute('data-index'); 
+        danhSach.splice(idx, 1); 
+        localStorage.setItem('danhSachDatLich', JSON.stringify(danhSach)); 
+        renderAdminTable(); 
+      }); 
+    }); 
+    const btnXoaHet = document.getElementById('btnXoaHet'); 
+    if (btnXoaHet) { 
+      btnXoaHet.addEventListener('click', function() { 
+        if (confirm('Bạn có chắc muốn xóa sạch toàn bộ sổ không?')) { 
+          localStorage.removeItem('danhSachDatLich'); 
+          renderAdminTable(); 
+        } 
+      }); 
+    } 
+  } 
+  function saveBooking(loai, ten, sdt, chitiet) { 
+    const now = new Date(); 
+    const minStr = (now.getMinutes() < 10 ? '0' : '') + now.getMinutes(); 
+    const timeStr = now.getHours() + ":" + minStr + " " + now.getDate() + "/" + (now.getMonth() + 1); 
+    let hienTai = JSON.parse(localStorage.getItem('danhSachDatLich')) || []; 
+    hienTai.push({ time: timeStr, loai: loai, ten: ten, sdt: sdt, chitiet: chitiet }); 
+    localStorage.setItem('danhSachDatLich', JSON.stringify(hienTai)); 
+    alert('Đã gửi thông tin thành công!'); 
+  } 
+  const formMuaHang = document.getElementById('formMuaHang'); 
+  if (formMuaHang) { 
+    formMuaHang.addEventListener('submit', function(e) { 
+      e.preventDefault(); 
+      const title = document.getElementById('productTitle').textContent; 
+      const ten = document.getElementById('txtTenMua').value.trim(); 
+      const sdt = document.getElementById('txtSdtMua').value.trim(); 
+      saveBooking(title, ten, sdt, "Đặt mua sản phẩm"); 
+      formMuaHang.reset(); 
+      renderProductData(); 
+    }); 
+  } 
+  const formSuaChua = document.getElementById('formSuaChua'); 
+  if (formSuaChua) { 
+    formSuaChua.addEventListener('submit', function(e) { 
+      e.preventDefault(); 
+      const title = document.getElementById('productTitle').textContent; 
+      const ten = document.getElementById('txtTenSua').value.trim(); 
+      const sdt = document.getElementById('txtSdtSua').value.trim(); 
+      const suaGi = document.getElementById('txtSuaGi').value.trim(); 
+      const khiNao = document.getElementById('txtKhiNaoLay').value.trim(); 
+      const lyDo = document.getElementById('txtLyDo').value.trim(); 
+      const chiTietStr = "Sửa: " + suaGi + " <br>Lấy: " + khiNao + " <br>Bệnh: " + lyDo; 
+      saveBooking(title, ten, sdt, chiTietStr); 
+      formSuaChua.reset(); 
+      renderProductData(); 
+    }); 
+  } 
+  function filterProducts() { 
+    if (!searchInput || !itemList) return; 
+    const filter = removeVietnameseTones(searchInput.value.trim()); 
+    if (filter === '') { 
+      itemList.style.display = 'none'; 
+      return; 
+    } 
+    const items = document.querySelectorAll('.search-item'); 
+    let hasResult = false; 
+    items.forEach(function(item) { 
+      const text = removeVietnameseTones(item.textContent); 
+      if (text.includes(filter)) { 
+        item.style.display = 'block'; 
+        hasResult = true; 
+      } else { 
+        item.style.display = 'none'; 
+      } 
+    }); 
+    itemList.style.display = hasResult ? 'block' : 'none'; 
+  } 
+  if (searchInput) { 
+    searchInput.addEventListener('input', filterProducts); 
+    searchInput.addEventListener('focus', filterProducts); 
+  } 
+  if (nutSanPham && listSanPham) { 
+    nutSanPham.addEventListener('click', function(event) { 
+      event.stopPropagation(); 
+      listSanPham.classList.toggle('show'); 
+    }); 
+  } 
+  document.addEventListener('click', function(event) { 
+    if (searchInput && itemList && !searchInput.contains(event.target) && !itemList.contains(event.target)) { 
+      itemList.style.display = 'none'; 
+    } 
+    if (nutSanPham && listSanPham && !nutSanPham.contains(event.target) && !listSanPham.contains(event.target)) { 
+      listSanPham.classList.remove('show'); 
+    } 
+  }); 
+  renderProductData(); 
+  const thanhHeader = document.querySelector('.shop-header');
+  if (thanhHeader) thanhHeader.style.display = 'none';
+  else {
+  const thanhHeader = document.querySelector('.shop-header');
+  if (thanhHeader) thanhHeader.style.display = 'flex';
+  }
 });
