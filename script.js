@@ -12,15 +12,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const isAdmin = urlParams.get('admin'); 
     if (!productId) return; 
     const dataBuffer = { 
-      "ac-quy": { title: "Bình ắc quy chính hãng", img: "ac-quy.jpg", info: "<p>Bình ắc quy dung lượng cao.</p>" }, 
+      "ac-quy": { title: "Bình ắc quy chính hãng", img: "binh ac quy.jpg", info: "<p>Bình ắc quy dung lượng cao.</p>" }, 
       "dich-vu-su-chua": { title: "Dịch vụ sửa chữa mọi thứ bạn muốn", img: "nhung vi khach vui ve.jpg", info: "<p>Trạm sửa chữa cấp tốc.</p>" }, 
       "dynamo-12v": { title: "Dynamo / Đi na mô 12V", img: "dynamo.jpg", info: "<p>Dynamo 12V sạc bình ổn định.</p>" }, 
       "dynamo-24v": { title: "Dynamo / Đi na mô 24V", img: "dynamo.jpg", info: "<p>Dynamo 24V hiệu suất cao.</p>" }, 
       "den-led": { title: "Đèn pha LED siêu sáng", img: "den pha led.jpg", info: "<p>Đèn pha LED chống nước IP68.</p>" }, 
-      "de-ma-ro-12v": { title: "Đề ma rơ 12V", img: "de-ma-ro.jpg", info: "<p>Củ đề 12V khởi động mượt mà.</p>" }, 
-      "de-ma-ro-24v": { title: "Đề ma rơ 24V", img: "de-ma-ro.jpg", info: "<p>Đề ma rơ 24V máy tàu thủy.</p>" }, 
+      "de-ma-ro-12v": { title: "Đề ma rơ 12V", img: "de ma ro.jpg", info: "<p>Củ đề 12V khởi động mượt mà.</p>" }, 
+      "de-ma-ro-24v": { title: "Đề ma rơ 24V", img: "de ma ro.jpg", info: "<p>Đề ma rơ 24V máy tàu thủy.</p>" }, 
       "avr": { title: "Linh kiện mạch AVR", img: "avr.jpg", info: "<p>Mạch ổn định điện áp AVR.</p>" }, 
-      "may-phat-dien": { title: "Máy phát điện", img: "may-phat-dien.jpg", info: "<p>Trao đổi máy phát điện đa dạng.</p>" }, 
+      "may-phat-dien": { title: "Máy phát điện", img: "may phat dien.jpg", info: "<p>Trao đổi máy phát điện đa dạng.</p>" }, 
       "mo-to": { title: "Mô tơ Điện cơ", img: "mo to.jpg", info: "<p>Mô tơ lõi đồng dày 100%.</p>" } 
     }; 
     const product = dataBuffer[productId]; 
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   } 
   function renderAdminTable() { 
-    const container = document.getElementById('adminTableContent'); 
+    const container = document.getElementById('adminT   ableContent'); 
     if (!container) return; 
 
     let danhSach = JSON.parse(localStorage.getItem('danhSachDatLich')) || []; 
