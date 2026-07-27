@@ -4,7 +4,6 @@ body {
     position: relative; 
     font-family: Arial, sans-serif; 
     color: #ffffff;
-    margin: 0;
 }
 h1 { 
     text-align: center; 
@@ -18,6 +17,11 @@ p {
     text-align: center; 
     color: #ffffff; 
     font-size: 24px; 
+}
+div {
+    text-align: center;
+    color: #626161;
+    font-size: 14px
 }
 img { 
     display: block; 
@@ -346,29 +350,20 @@ html, body {
     background-attachment: fixed !important;
     background-size: cover !important;
 }
-/* 🌟 HỒI SINH QUẢ KHUNG SIÊU ĐẸP NGUYÊN BẢN CHAO ĐẢO CẢNG CÁ */
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background: linear-gradient(300deg, #aba3d9, #fa7f7f, #5151f0) !important;
-  background-attachment: fixed !important;
-  background-size: cover !important;
-}
 .shop-header {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  padding: 10px 20px !important;
-  margin: 20px auto !important;
-  max-width: 1200px;
-  width: 95%;
-  background: rgba(255, 255, 255, 0.08) !important; 
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 50px !important; 
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 20px !important;
+    margin: 20px auto !important;
+    max-width: 1200px;
+    width: 95%;
+    background: #96969670 !important; 
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid #494949 !important;
+    border-radius: 50px !important; 
+    box-shadow: 0 8px 32px 0 #0000000c !important;
 }
 .search-container {
   display: block !important;
@@ -376,9 +371,20 @@ html, body {
 }
 html:has([src*="admin=true"]) .btn-back-box,
 body:has(~ * [href*="admin=true"]) .btn-back-box {
-  display: none !important;
+    display: none !important;
 }
 body:has(#boxAdmin[style*="block"]) .shop-header,
 body:has(#boxAdmin:not([style*="none"])) .shop-header {
-  display: none !important;
+    display: none !important;
+}
+.admin-box-xinh {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 16px !important;
+  padding: 30px !important;
+  margin: 30px auto !important;
+  max-width: 900px !important;
+  width: 90% !important;
 }
